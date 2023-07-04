@@ -41,7 +41,8 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form action="" method="POST" class="user">
+                                    <form action="{{ route('login.action') }}" method="POST" class="user">
+                                    @csrf
                                         <div class="form-group">
                                             <input name="email" type="email" class="form-control form-control-user"
                                                 id="email" aria-describedby="emailHelp"
