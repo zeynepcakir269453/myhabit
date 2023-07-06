@@ -44,6 +44,7 @@ Route::middleware('auth')->group(function(){
         Route::get('show/{id}','show')->name('products.show');
         Route::get('edit/{id}','edit')->name('products.edit');
         Route::put('edit/{id}','update')->name('products.update');
+        Route::delete('destroy/{id}','destroy')->name('products.destroy');
     });
 
     Route::get('/profile',[App\Http\Controllers\AuthController::class,'profile'])->name('profile');
