@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
-class ProjectController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('product.index');
+        return view('products.index');
     }
 
     /**
@@ -19,7 +20,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.create');
     }
 
     /**
@@ -27,7 +28,9 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       Product::create($request->all());
+       return redirect()->route('products')->with('success','Product added successfully');
+       
     }
 
     /**
