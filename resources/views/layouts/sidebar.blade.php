@@ -25,6 +25,12 @@
 </li>
 
 <li class="nav-item">
+    <a class="nav-link" href="{{ route('users')}}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>User Account</span></a>
+</li>
+
+<li class="nav-item">
     <a class="nav-link" href="/profile">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Profile</span></a>
