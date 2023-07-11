@@ -51,6 +51,7 @@ Route::middleware('auth')->group(function(){
     Route::controller(UserController::class)->prefix('users')->group(function(){
         Route::get('','index')->name('users');
         Route::get('create','create')->name('users.create');
+        Route::get('show/{id}','show')->name('users.show');
 
     });
 
