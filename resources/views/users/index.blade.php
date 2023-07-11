@@ -47,7 +47,7 @@
                 </form>
             </td>
             <td class="align-middle">
-                <a href="{{ route('products.edit', $rs->id) }}"><i class="fa fa-tint" aria-hidden="true"></i></a>
+                <a href="{{ route('users.edit', $rs->id) }}"><i class="fa fa-tint" aria-hidden="true"></i></a>
             </td>
         </tr>
         @endforeach
