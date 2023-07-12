@@ -23,7 +23,8 @@ class AuthController extends Controller
             'name' => $request->name,
             'email'=> $request->email,
             'password'=>$request->password,
-            'level'=>'Admin'
+            'profile'=>'0',
+            'group'=>'0'
         ]);
         return redirect()->route('login');
     }

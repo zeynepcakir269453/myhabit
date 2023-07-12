@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Profiles;
+use App\Models\Groups;
 
 class UserController extends Controller
 {
@@ -48,7 +50,11 @@ class UserController extends Controller
     public function edit(string $id)
     {
         $user= User::findOrFail($id);
-        return view('users.edit',compact('user'));
+
+        $profiles= Profiles::orderBy('created_at','DESC')->get();
+        $groups  = Groups::orderBy('created_at','DESC')->get();
+
+        return view('users.edit',compact('user','profiles','groups'));
     }
 
     /**
