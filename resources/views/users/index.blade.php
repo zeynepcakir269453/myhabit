@@ -39,7 +39,7 @@
                 <a href="{{ route('users.show', $rs->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
             </td>
             <td>
-                <form action="{{ route('products.destroy', $rs->id) }}" method="POST" type="button"
+                <form action="{{ route('users.destroy', $rs->id) }}" method="POST" type="button"
                     onsubmit="return confirm('Delete?')">
                     @csrf
                     @method('DELETE')
