@@ -23,7 +23,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $profiles= Profiles::orderBy('created_at','DESC')->get();
+        $groups  = Groups::orderBy('created_at','DESC')->get();
+
+        return view('users.create',compact('profiles','groups'));
     }
 
     /**
@@ -31,7 +34,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create($request->all());
+        return redirect()->route('users')->with('success','User account added successfully'); 
     }
 
     /**
