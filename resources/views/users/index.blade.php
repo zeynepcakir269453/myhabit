@@ -3,11 +3,16 @@
 @section('title','Home User')
 
 @section('contents')
-<div class="d-flex align-items-center justify-content-between">
+<div class="row justify-content-start">
+<div  class="col-8">
     <h1>List Users</h1>
-    <a href="{{ route('users.create') }}" class="btn btn-primary">Add User Account</a>
 </div>
-<hr />
+<div  class="col-4 justify-content-end">
+    <a href="{{ route('users.create') }}" class="btn btn-primary">Add User Account</a>
+    <a href="{{ route('users.createprofile') }}" class="btn btn-info">Add Profile</a>
+    <a href="{{ route('users.create') }}" class="btn btn-success">Add Group</a>
+</div>
+<hr /></div>
 @if(Session::has('success'))
 <div class="alert alert-success" role="alert">
     {{ Session::get('success') }}

@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('groups', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();;
             $table->string('value')->unique();
-            $table->string('subgroup');
             $table->text('description');
             $table->timestamps();
         });

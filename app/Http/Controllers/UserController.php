@@ -29,6 +29,11 @@ class UserController extends Controller
         return view('users.create',compact('profiles','groups'));
     }
 
+    public function createprofile()
+    {
+        return view('users.createprofile');
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -38,6 +43,12 @@ class UserController extends Controller
         return redirect()->route('users')->with('success','User account added successfully'); 
     }
 
+    public function storeprofile(Request $request)
+    {
+        Profiles::create($request->all());
+        return redirect()->route('users')->with('success','Profile added successfully'); 
+    }
+
     /**
      * Display the specified resource.
      */
@@ -45,7 +56,6 @@ class UserController extends Controller
     {
         $user= User::findOrFail($id);
         return view('users.show',compact('user'));
-
     }
 
     /**

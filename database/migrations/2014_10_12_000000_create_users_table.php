@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('profile');
             $table->string('group');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
