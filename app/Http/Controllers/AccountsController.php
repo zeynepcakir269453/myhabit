@@ -11,7 +11,7 @@ class AccountsController extends Controller
      */
     public function index()
     {
-        return view('product.index');
+        return view('accounts.index');
     }
 
     /**
