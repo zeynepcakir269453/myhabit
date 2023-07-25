@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
@@ -48,6 +49,10 @@ Route::middleware('auth')->group(function(){
         Route::delete('destroy/{id}','destroy')->name('products.destroy');
     });
 
+    Route::controller(AccountsController::class)->prefix('accounts')->group(function(){
+        Route::get('','index')->name('accounts');
+    });
+
     Route::controller(UserController::class)->prefix('users')->group(function(){
         Route::get('','index')->name('users');
         Route::get('create','create')->name('users.create');
@@ -57,8 +62,6 @@ Route::middleware('auth')->group(function(){
         Route::post('store','store')->name('users.store');
         Route::post('storeprofile','storeprofile')->name('users.storeprofile');
         Route::post('storegroup','storegroup')->name('users.storegroup');
-
-
 
         Route::get('show/{id}','show')->name('users.show');
         Route::get('edit/{id}','edit')->name('users.edit');
