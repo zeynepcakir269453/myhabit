@@ -10,7 +10,7 @@
 <div  class="col-4 justify-content-end">
     <a href="{{ route('users.create') }}" class="btn btn-primary">Add User Account</a>
     <a href="{{ route('users.createprofile') }}" class="btn btn-info">Add Profile</a>
-    <a href="{{ route('users.create') }}" class="btn btn-success">Add Group</a>
+    <a href="{{ route('users.creategroup') }}" class="btn btn-success">Add Group</a>
 </div>
 <hr /></div>
 @if(Session::has('success'))

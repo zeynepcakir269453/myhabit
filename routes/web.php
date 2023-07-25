@@ -52,8 +52,12 @@ Route::middleware('auth')->group(function(){
         Route::get('','index')->name('users');
         Route::get('create','create')->name('users.create');
         Route::get('createprofile','createprofile')->name('users.createprofile');
+        Route::get('creategroup','creategroup')->name('users.creategroup');
+
         Route::post('store','store')->name('users.store');
         Route::post('storeprofile','storeprofile')->name('users.storeprofile');
+        Route::post('storegroup','storegroup')->name('users.storegroup');
+
 
 
         Route::get('show/{id}','show')->name('users.show');

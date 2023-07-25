@@ -34,6 +34,11 @@ class UserController extends Controller
         return view('users.createprofile');
     }
 
+    public function creategroup()
+    {
+        return view('users.creategroup');
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -49,6 +54,11 @@ class UserController extends Controller
         return redirect()->route('users')->with('success','Profile added successfully'); 
     }
 
+    public function storegroup(Request $request)
+    {
+        Groups::create($request->all());
+        return redirect()->route('users')->with('success','Group added successfully'); 
+    }
     /**
      * Display the specified resource.
      */

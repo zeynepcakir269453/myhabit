@@ -11,6 +11,7 @@ class Profiles extends Model
 
        protected $fillable = [
         'name',
-        'value'
+        'value',
+        'description'
     ];
 }
