@@ -51,6 +51,7 @@ Route::middleware('auth')->group(function(){
 
     Route::controller(AccountsController::class)->prefix('accounts')->group(function(){
         Route::get('','index')->name('accounts');
+        Route::get('create','create')->name('accounts.create');
     });
 
     Route::controller(UserController::class)->prefix('users')->group(function(){
